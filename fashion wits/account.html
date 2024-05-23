@@ -1,0 +1,134 @@
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Sign Up Form</title>
+       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"><!--linking the icon font style-->
+      <link rel="stylesheet" href="CSS/style.css">
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="index.html">FASHION DESIGN</a>
+         <a href="index.html"class="active">Home</a>
+         <a href="#about">About</a>
+         <a href="#services">Services</a>
+         <a href="#contact">Contact</a>
+       </nav>
+   </header>
+<section id="hero">
+  <div class="text">
+    <h3>"The journey of style begins here!<br> Sign up now to unlock exclusive fashion tips,<br>
+      trends, and personalized recommendations tailored just for you."</h3>
+  </div>
+  <div class="thumbnail">
+
+    <div class="item">
+      <img src="images/img6.jpg">
+      <div class="content">
+          <div class="title">Name Slider</div>
+          <div class="description">Description</div>
+      </div>
+  </div>
+
+  <div class="item">
+      <img src="images/img4.jpg">
+      <div class="content">
+          <div class="title">Name Slider</div>
+          <div class="description">Description</div>
+      </div>
+  </div>
+
+  <div class="item">
+      <img src="images/img13.jpg">
+      <div class="content">
+          <div class="title">Name Slider</div>
+          <div class="description">Description</div>
+      </div>
+  </div>
+
+  <div class="item">
+        <img src="images/img7.jpg">
+        <div class="content">
+            <div class="title">Name Slider</div>
+            <div class="description">Description</div>
+        </div>
+    </div>
+  </div>
+
+  <div class="container">
+      <h1>Welcome to Fashion Wits</h1>
+      <h2>Find new ideas to try</h2>
+      <form action="PHP/create_profile.php" method="POST">
+        <div class="name-grid">
+            <label for="firstName">First Name</label>
+            <label for="lastName">Last Name</label>
+            <input type="text" id="firstName" name="firstName" required>
+            <input type="text" id="lastName" name="lastName" required>
+        </div>
+        <label for="gender">Gender</label>
+        <select id="gender" name="gender" required>
+            <option value="">Select Gender</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+        </select>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="username">Username</label>
+      <input type="text" id="username" name="username" required>
+
+      <label for="password">Password</label>
+        <div class="password-container">
+          <input type="password" id="password" name="password" required>
+            <i class="toggle-password fas fa-eye"></i>
+        </div>
+
+      <?php if(isset($error_message)) { ?>
+       <p class="error"><?php echo $error_message; ?></p>
+   <?php } ?>
+          <button type="submit">Continue</button>
+          <p>Already Have An Account!</p>
+          <a href="dashboard.php" class="open-button">Sign In</a>
+      </form>
+      </div>
+</section>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const passwordField = document.getElementById('password');
+  const togglePasswordButton = document.querySelector('.toggle-password');
+
+  togglePasswordButton.addEventListener('click', function() {
+      const type = passwordField.getAttribute('type') === 'password' ? 'text' : 'password';
+      passwordField.setAttribute('type', type);
+      this.classList.toggle('fa-eye-slash'); // Toggle icon class
+  });
+});
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    const items = document.querySelectorAll('.item');
+    let currentIndex = 0;
+
+    function showNextItem() {
+        const previousIndex = currentIndex;
+        currentIndex = (currentIndex + 1) % items.length;
+        items[previousIndex].classList.remove('active');
+        items[currentIndex].classList.add('active');
+    }
+
+    // Show the first item initially
+    items[currentIndex].classList.add('active');
+
+    // Change slide every 3 seconds (adjust as needed)
+    setInterval(showNextItem, 3000);
+});
+
+</script>
+  </body>
+  </html>

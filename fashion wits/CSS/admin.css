@@ -1,0 +1,137 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+h1, h2, h3 {
+    color: #333;
+    text-align: center;
+}
+a{
+  text-decoration: none;
+  color: #333;
+}
+.tablink a{
+  background-color: #eee;
+}
+.tabs {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.tablink {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    transition: background-color 0.3s;
+}
+
+.tablink:hover {
+    background-color: #555;
+}
+
+.tabcontent {
+    text-align:center;
+    display: none;
+    padding: 20px;
+    background-color: white;
+    border-radius: 5px;
+}
+
+.tabcontent.active {
+    display: block;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table th, table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+table th {
+    background-color: #f2f2f2;
+}
+.addStylist{
+   display: none;
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   background-color: rgba(0, 0, 0, 1);
+   padding: 50px;
+   border: 1px solid #ccc;
+   border-radius: 5px;
+}
+.name-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+.name-grid label,
+.name-grid input {
+    grid-column: span 1;
+}
+.addStylist h3{
+  color: #f1683a;
+}
+.addStylist label{
+  color: #eee;
+  text-align: center;
+  font-weight: bold;
+}
+input[type="email"],
+input[type="password"],
+input[type="date"],
+input[type="text"], select {
+    padding: 8px;
+    border: none;
+    color: #eee;
+    outline: none;
+    background: none;
+    width: 100%;
+    border-bottom: 1.5px solid #f1683a;
+}
+button[type="button"]{
+  background-color: #f1683a;
+  color: #fff;
+  padding: 10px 15px;
+  margin-top: 15px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+.btn{
+  background-color: #f1683a;
+  color: #fff;
+  padding: 10px 15px;
+  border-radius: 3px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+.btn-r{
+  background-color: #fff;
+  color: #f1683a;
+  padding: 10px 15px;
+  border: 1px solid red;
+  border-radius: 3px;
+  cursor: pointer;
+  margin-top: 10px;
+}

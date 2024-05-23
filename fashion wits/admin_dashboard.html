@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="CSS/admin.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Admin Dashboard - Fashion Advice Platform</h1>
+
+
+        <!-- Navigation Tabs -->
+        <div class="tabs">
+            <button class="tablink" onclick="openTab(event, 'Users')">Users</button>
+            <button class="tablink" onclick="openTab(event, 'Stylists')">Stylists</button>
+            <button class="tablink" onclick="openTab(event, 'Products')">Products</button>
+            <button class="tablink" onclick="openTab(event, 'Appointments')">Appointments</button>
+            <button class="tablink" onclick="openTab(event, 'Recommendations')">Recommendations</button>
+            <button class="tablink"><a href="PHP/logout.php">Logout</a></button>
+        </div>
+
+        <!-- Users Tab -->
+        <div id="Users" class="tabcontent">
+            <h2>Users</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>User ID</th>
+                        <th>Username</th>
+                        <th>Email</th>
+                        <!-- Add more columns as needed -->
+                    </tr>
+                </thead>
+                <tbody id="usersTableBody">
+                    <!-- Users data will be displayed here -->
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Stylists Tab -->
+        <div id="Stylists" class="tabcontent">
+            <h2>Stylists</h2>
+            <!-- Add Stylist Form -->
+      <button type="button" id="makeChangesBtn">MAKE CHANGES</button>
+          <div class="addStylist">
+            <h3>Add/Remove Stylist</h3>
+            <form id="addStylistForm" action="PHP/stylist.php" method="post">
+                <label for="stylistName">Username</label>
+                <input type="text" id="stylistName" name="username"><br><br>
+                <label for="stylistName">Expertise</label>
+                <input type="text" id="stylistName" name="expertise"><br><br>
+                <label for="stylistEmail">Email</label>
+                <input type="email" id="stylistEmail" name="email"><br><br>
+                <label for="stylistEmail">availability</label>
+
+                <div id="availabilityFields">
+                  <div class="name-grid">
+                    <input type="text" name="availability[day][]" placeholder="Day" required>
+                    <input type="text" name="availability[time][]" placeholder="Time" required>
+                  </div>
+                </div>
+
+                <button type="submit" name="action" value="add" class="btn">Add Stylist</button>
+                <button type="submit" name="action" value="remove" class="btn-r">Remove Stylist</button>
+                </div>
+            </form>
+
+            <!-- List of Stylists -->
+            <h3>Stylists List</h3>
+            <table>
+              <thead>
+                <tr>
+                    <th>StylistID</th>
+                    <th>Username</th>
+                    <th>Email</th>
+                </tr>
+            </thead>
+                <tbody id="stylistsTableBody">
+                    <!-- Stylists data will be displayed here -->
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Products Tab -->
+        <div id="Products" class="tabcontent">
+            <h2>Products</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Product ID</th>
+                        <th>Name</th>
+                        <th>Category</th>
+                        <!-- Add more columns as needed -->
+                    </tr>
+                </thead>
+                <tbody id="productsTableBody">
+                    <!-- Products data will be displayed here -->
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Appointments Tab -->
+        <div id="Appointments" class="tabcontent">
+            <h2>Appointments</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Appointment ID</th>
+                        <th>User ID</th>
+                        <th>Stylist ID</th>
+                        <th>Appointment Time</th>
+                        <th>Status</th>
+                        <!-- Add more columns as needed -->
+                    </tr>
+                </thead>
+                <tbody id="appointmentsTableBody">
+                    <!-- Appointments data will be displayed here -->
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Recommendations Tab -->
+        <div id="Recommendations" class="tabcontent">
+            <h2>Recommendations</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>User ID</th>
+                        <th>Product ID</th>
+                        <!-- Add more columns as needed -->
+                    </tr>
+                </thead>
+                <tbody id="recommendationsTableBody">
+                    <!-- Recommendations data will be displayed here -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="scrip/admin.js"></script>
+</body>
+</html>
